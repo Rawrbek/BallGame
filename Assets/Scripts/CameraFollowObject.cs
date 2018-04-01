@@ -33,10 +33,10 @@ public class CameraFollowObject : MonoBehaviour
 
 
                 //Clamping the camera
-                if (_LocalRotation.y < 0f)
-                    _LocalRotation.y = 0f;
+                if (_LocalRotation.y < -30f)
+                   _LocalRotation.y = -30f;
                 else if (_LocalRotation.y > 100f)
-                    _LocalRotation.y = 100f;
+                   _LocalRotation.y = 100f;
 
 
             }

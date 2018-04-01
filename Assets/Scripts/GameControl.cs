@@ -37,6 +37,9 @@ public class GameControl : MonoBehaviour
         //Sets scoretext alignment  
         scoreText.alignment = TextAnchor.UpperLeft;
       
+        //resets current score
+        currentScore = 0;
+
     }
 
     void Update()
@@ -47,7 +50,13 @@ public class GameControl : MonoBehaviour
         ///////////// CAN BE CHANGED TO LOWEST THING ON THE MAP MINUS SOMETHING?
         if (player.transform.position.y < -100)
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
+
+        //Reloads the active scene if R is pressed
+        if (Input.GetKey("r"))
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

@@ -91,7 +91,7 @@ public class PlatformMoverSimple : MonoBehaviour {
    
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 
         //How far it has moved
