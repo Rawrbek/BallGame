@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -88,12 +89,22 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
         }
 
+        //Figures out if the player in on a moving platform
 
 
-        //Extra gravity for this ball. Useful for making gravity zones me thinks
-        myRigidbody.AddForce(Vector3.down * gravity * myRigidbody.mass);
+        if (hitInfo.collider != null) { 
+            if (hitInfo.collider.tag == "MovingPlatform")
+            {
 
+                //myRigidbody.useGravity = false;
+                myRigidbody.velocity = hitInfo.rigidbody.velocity;
+                //transform.position = hitInfo.transform.position;
 
+            }
+    }
+
+    //Extra gravity for this ball. Useful for making gravity zones me thinks
+    myRigidbody.AddForce(Vector3.down * gravity * myRigidbody.mass);
     }
 
 

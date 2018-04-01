@@ -2,11 +2,12 @@
 
 public class Collectible : MonoBehaviour {
 
+    //What speed it should rotate at
+    float rotateSpeed = 100;
 
-
-    private void Update()
+    void Update()
     {
-        transform.Rotate(Vector3.right * Time.deltaTime);
+        transform.Rotate(0,0, rotateSpeed * Time.deltaTime);
     }
 
 

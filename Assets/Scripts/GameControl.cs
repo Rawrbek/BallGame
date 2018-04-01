@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
-{
 
+{
     //How many coins have been collected
     public static int currentScore;
 
@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour
     public Transform player;
 
     //Keeps track of if the win portal should open
-    bool  canWin = false;
+    public static bool  canWin = false;
 
     // For keeping count of collectibles
     public static int collectibleCount;
@@ -40,6 +40,9 @@ public class GameControl : MonoBehaviour
         //resets current score
         currentScore = 0;
 
+        //Can Win reset 
+        canWin = false;
+
     }
 
     void Update()
@@ -64,14 +67,12 @@ public class GameControl : MonoBehaviour
 
         if (collectibleCount == 0)
         {
-
             canWin = true;
-
         }
 
         //Writes the score text
         scoreText.text = "Coins Collected:"+currentScore + "/" + CollectibleCountFixed;
-          }
+    }
 
 }
 
