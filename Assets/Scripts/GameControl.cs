@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -19,7 +20,11 @@ public class GameControl : MonoBehaviour
     public static int collectibleCount;
 
     private GameObject[] getCount;
-     
+
+    //For writing on screen
+    public Text scoreText;
+    
+
     private void Start()
     {
         //Finds amount of collectibles
@@ -29,6 +34,9 @@ public class GameControl : MonoBehaviour
         //The max, used to draw UI
         CollectibleCountFixed = collectibleCount;
 
+        //Sets scoretext alignment  
+        scoreText.alignment = TextAnchor.UpperLeft;
+      
     }
 
     void Update()
@@ -52,21 +60,9 @@ public class GameControl : MonoBehaviour
 
         }
 
-    }
-
-  // GUI
-
-       // GUIStyle = 
-
-    //Draws score   
-    void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 20), currentScore + "/"  + collectibleCount + "coins collected");
-    }
-
-
-
-
+        //Writes the score text
+        scoreText.text = "Coins Collected:"+currentScore + "/" + CollectibleCountFixed;
+          }
 
 }
 
