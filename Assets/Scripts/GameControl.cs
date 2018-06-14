@@ -74,6 +74,7 @@ public class GameControl : MonoBehaviour
         scoreText.text = "Coins Collected:"+currentScore + "/" + CollectibleCountFixed;
     }
 
+    //TEST AF SOURCETREE
 }
 
 
