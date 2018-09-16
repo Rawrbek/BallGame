@@ -17,6 +17,8 @@ public class Collectible : MonoBehaviour {
         if (triggerCollider.tag == "Player")
         {
             GameControl.currentScore += 1;
+
+            //The Collectible count is how many collectibles there are left on the map
             GameControl.collectibleCount -= 1;
             Destroy(gameObject);
            

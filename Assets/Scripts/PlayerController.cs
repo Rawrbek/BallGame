@@ -133,8 +133,7 @@ public class PlayerController : MonoBehaviour
 
         if (isJumping == false)
         {
-
-            myRigidbody.AddForce(velocity);
+           myRigidbody.AddForce(velocity);
         }
 
         else
